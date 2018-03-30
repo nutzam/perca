@@ -1,4 +1,4 @@
-package org.nutz.boot.starter.gateway.server;
+package org.nutz.cloud.perca;
 
 import java.io.IOException;
 
@@ -15,5 +15,5 @@ public interface RouteFilter {
     
     default void setPropertiesProxy(Ioc ioc, PropertiesProxy conf, String prefix) {}
     
-    String nickname();
+    String getName();
 }

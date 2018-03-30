@@ -1,12 +1,12 @@
-package org.nutz.boot.starter.gateway.server.impl;
+package org.nutz.cloud.perca.impl;
 
 import java.io.IOException;
 import java.util.List;
 import java.util.regex.Pattern;
 
-import org.nutz.boot.starter.gateway.server.RouteContext;
-import org.nutz.boot.starter.gateway.server.RouteFilter;
 import org.nutz.boot.starter.loach.client.LoachClient;
+import org.nutz.cloud.perca.RouteContext;
+import org.nutz.cloud.perca.RouteFilter;
 import org.nutz.ioc.Ioc;
 import org.nutz.ioc.impl.PropertiesProxy;
 import org.nutz.lang.Strings;
@@ -152,7 +152,7 @@ public class SimpleRouteFilter implements RouteFilter {
         return uriPattern.matcher(ctx.uri).find();
     }
 
-    public String nickname() {
+    public String getName() {
         return "simple";
     }
 

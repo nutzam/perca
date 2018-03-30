@@ -1,4 +1,4 @@
-package org.nutz.boot.starter.gateway.server;
+package org.nutz.cloud.perca;
 
 import java.io.IOException;
 import java.util.Iterator;
@@ -15,7 +15,7 @@ import org.nutz.ioc.loader.annotation.IocBean;
 
 @IocBean
 @SuppressWarnings("serial")
-public class ApiGateWayServlet extends AsyncMiddleManServlet implements WebServletFace {
+public class PercaServlet extends AsyncMiddleManServlet implements WebServletFace {
     
     public static final String NAME_ROUTE_CONCEXT = "gateway.route_context";
     
