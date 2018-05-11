@@ -7,7 +7,7 @@
 	<properties>
 		<nutzboot.version>2.2-SNAPSHOT</nutzboot.version>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-		<jetty.version>9.4.9.v20180320</jetty.version>
+		<jetty.version>9.4.10.v20180503</jetty.version>
 	</properties>
 	<dependencyManagement>
 		<dependencies>
@@ -54,30 +54,14 @@
 					<useIncrementalCompilation>false</useIncrementalCompilation>
 				</configuration>
 			</plugin>
-			
 			<plugin>
-				<groupId>org.apache.maven.plugins</groupId>
-				<artifactId>maven-shade-plugin</artifactId>
-				<version>3.0.0</version>
-				<executions>
-					<execution>
-						<phase>package</phase>
-						<goals>
-							<goal>shade</goal>
-						</goals>
-						<configuration>
-							<transformers>
-								<transformer implementation="org.apache.maven.plugins.shade.resource.ServicesResourceTransformer" />
-								<transformer implementation="org.apache.maven.plugins.shade.resource.AppendingTransformer">
-									<resource>META-INF/nutz/org.nutz.boot.starter.NbStarter</resource>
-								</transformer>
-								<transformer implementation="org.apache.maven.plugins.shade.resource.ManifestResourceTransformer">
-									<mainClass>org.nutz.cloud.perca.PercaLauncher</mainClass>
-								</transformer>
-							</transformers>
-						</configuration>
-					</execution>
-				</executions>
+				<groupId>org.nutz.boot</groupId>
+				<artifactId>nutzboot-maven-plugin</artifactId>
+				<version>${nutzboot.version}</version>
+				<configuration>
+					<repoUser>nutzio</repoUser>
+					<repoUrl>http://appstore.nutz.io/repo</repoUrl>
+				</configuration>
 			</plugin>
 		</plugins>
 	</build>
